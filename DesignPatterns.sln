@@ -1,11 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35506.116 d17.12
+VisualStudioVersion = 17.12.35506.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ChainOfResponsibilityDesignPattern", "ChainOfResponsibilityDesignPattern", "{2CA319BC-E803-40FE-AF4B-34EB81C4D03C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.ChainOfResponsibility", "DesignPattern.ChainOfResponsibility\DesignPattern.ChainOfResponsibility.csproj", "{33842AD5-F258-46A7-A994-8D4E4CE129AD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CQRSDesignPattern", "CQRSDesignPattern", "{446792F6-E24A-4D2F-B9EF-3E0C7F0698D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPattern.CQRS", "CQRSDesignPattern\DesignPattern.CQRS\DesignPattern.CQRS.csproj", "{588C08FC-54B6-4F20-85A8-05D40C16E638}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,11 +21,16 @@ Global
 		{33842AD5-F258-46A7-A994-8D4E4CE129AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33842AD5-F258-46A7-A994-8D4E4CE129AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33842AD5-F258-46A7-A994-8D4E4CE129AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{588C08FC-54B6-4F20-85A8-05D40C16E638}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{588C08FC-54B6-4F20-85A8-05D40C16E638}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{588C08FC-54B6-4F20-85A8-05D40C16E638}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{588C08FC-54B6-4F20-85A8-05D40C16E638}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{33842AD5-F258-46A7-A994-8D4E4CE129AD} = {2CA319BC-E803-40FE-AF4B-34EB81C4D03C}
+		{588C08FC-54B6-4F20-85A8-05D40C16E638} = {446792F6-E24A-4D2F-B9EF-3E0C7F0698D5}
 	EndGlobalSection
 EndGlobal
