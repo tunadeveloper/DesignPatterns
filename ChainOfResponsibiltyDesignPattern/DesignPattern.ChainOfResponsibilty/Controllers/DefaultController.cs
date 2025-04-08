@@ -1,8 +1,6 @@
 ﻿using DesignPattern.ChainOfResponsibility.ChainOfResponsbility;
-using DesignPattern.ChainOfResponsibility.DataAccessLayer;
 using DesignPattern.ChainOfResponsibility.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
 
 namespace DesignPattern.ChainOfResponsibility.Controllers
 {
@@ -27,22 +25,6 @@ namespace DesignPattern.ChainOfResponsibility.Controllers
             manager.SetNextApprover(areaDirector);
 
             treasurer.ProcessRequest(model);
-
-            var context = new Context();
-            var result = context.CustomerProcesses
-                .OrderByDescending(x=>x.CustomerProcessID)
-                .FirstOrDefault(x=>x.Name == model.Name && x.Amount == model.Amount.ToString());
-            ViewBag.Result = result?.Description;
-
-            using (var context2 = new Context())
-            {
-                var history = context2.CustomerProcesses
-                    .Where(x => x.Name == model.Name)
-                    .OrderByDescending(x => x.CustomerProcessID)
-                    .Take(10)
-                    .ToList();
-                ViewBag.History = history;
-            }
             return View();
         }
     }

@@ -1,4 +1,4 @@
-﻿namespace DesignPattern.ChainOfResponsibilty.DataAccessLayer
+﻿namespace DesignPattern.ChainOfResponsibility.DataAccessLayer
 {
     public class CustomerProcess
     {

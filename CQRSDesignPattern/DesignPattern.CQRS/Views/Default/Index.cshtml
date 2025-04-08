@@ -4,33 +4,96 @@
 }
 
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-<div class="container">
-    <br />
-    <table class="table table-bordered">
-        <tr>
-            <th>#</th>
-            <th>Ürün Adı</th>
-            <th>Ürün Fiyatı</th>
-            <th>Ürün Stoğu</th>
-            <th>Getir</th>
-            <th>Ürünü Sil</th>
-            <th>Ürünü Güncelle</th>
-        </tr>
+<style>
+    body {
+        background-color: #f7f9fc;
+        font-family: 'Segoe UI', sans-serif;
+    }
+    .product-card {
+        background-color: white;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+        padding: 25px;
+        transition: all 0.3s ease;
+    }
 
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.ID</td>
-                <td>@item.Name</td>
-                <td>@item.Price</td>
-                <td>@item.Stock</td>
-                <td><a class="btn btn-outline-warning" href="/Default/GetProduct/@item.ID">Getir</a></td>
-                <td><a class="btn btn-outline-danger" href="/Default/DeleteProduct/@item.ID">Sil</a></td>
-                <td><a class="btn btn-outline-primary" href="/Default/UpdateProduct/@item.ID">Güncelle</a></td>
-            </tr>
-        }
+    .product-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    }
 
-    </table>
-    <a class="btn btn-success" href="/Default/CreateProduct">+ Yeni Ürün</a>
+    .table th {
+        font-weight: 600;
+    }
+
+    .table td, .table th {
+        vertical-align: middle;
+    }
+
+    .btn i {
+        margin-right: 5px;
+    }
+
+    .header-actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .product-count {
+        font-size: 14px;
+        color: #888;
+    }
+</style>
+
+<div class="container mt-5">
+    <div class="header-actions mb-3">
+        <div>
+            <h3 class="text-dark mb-0"><i class="fas fa-boxes-stacked me-2 text-primary"></i>Ürün Yönetimi</h3>
+            <p class="product-count">Toplam Ürün: <strong>@Model.Count</strong></p>
+        </div>
+        <a class="btn btn-success btn-lg" href="/Default/CreateProduct">
+            <i class="fas fa-plus-circle"></i> Yeni Ürün Ekle
+        </a>
+    </div>
+
+    <div class="product-card">
+        <table class="table table-hover table-bordered align-middle text-center">
+            <thead class="table-light">
+                <tr>
+                    <th>#</th>
+                    <th>Ürün Adı</th>
+                    <th>Fiyat (₺)</th>
+                    <th>Stok</th>
+                    <th style="width: 210px;">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td class="text-start">@item.Name</td>
+                        <td>@item.Price.ToString("N2")</td>
+                        <td>@item.Stock</td>
+                        <td>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a class="btn btn-sm btn-outline-warning" title="Görüntüle" href="/Default/GetProduct/@item.ID">
+                                    <i class="fas fa-eye"></i> Görüntüle
+                                </a>
+                                <a class="btn btn-sm btn-outline-primary" title="Güncelle" href="/Default/UpdateProduct/@item.ID">
+                                    <i class="fas fa-pen"></i> Güncelle
+                                </a>
+                                <a class="btn btn-sm btn-outline-danger" title="Sil" href="/Default/DeleteProduct/@item.ID">
+                                    <i class="fas fa-trash"></i> Sil
+                                </a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 </div>

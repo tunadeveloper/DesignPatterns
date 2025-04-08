@@ -3,16 +3,66 @@
     Layout = null;
 }
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-<div class="Container">
-    <br />
-    <form method="post">
-        <label>Müşteri Adı Soyadı</label>
-       <input type="text" class="form-control" asp-for="Name"/>
-        <br />
-        <label>Çekilecek miktar</label>
-        <input type="text" class="form-control" asp-for="Amount" />
-        <br />
-        <button type="submit" class="btn btn-primary">İşlemi Başlat</button>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-    </form>
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 rounded-4" style="width: 100%; max-width: 500px;">
+        <div class="card-header bg-warning text-dark text-center rounded-3">
+            <h3><i class="fas fa-hand-holding-usd me-2"></i>Para Çekme İşlemi</h3>
+        </div>
+        <div class="card-body">
+            <form method="post">
+                <div class="mb-3">
+                    <label asp-for="Name" class="form-label fw-bold">Müşteri Adı Soyadı</label>
+                    <input type="text" class="form-control" asp-for="Name" placeholder="Ad Soyad giriniz" required />
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Amount" class="form-label fw-bold">Çekilecek Miktar (₺)</label>
+                    <input type="number" min="1" class="form-control" asp-for="Amount" placeholder="Örn: 100000" required />
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-warning fw-bold" type="submit">
+                        <i class="fas fa-paper-plane me-1"></i> İşlemi Gönder
+                    </button>
+                </div>
+            </form>
+            @if (ViewBag.Result != null)
+            {
+                <div class="alert alert-info mt-3 text-center">
+                    <i class="fas fa-info-circle"></i> @ViewBag.Result
+                </div>
+            }
+        </div>
+    </div>
 </div>
+@if (ViewBag.History != null)
+{
+    <div class="mt-5">
+        <h4 class="text-center text-secondary mb-3">
+            <i class="fas fa-clock-rotate-left me-1"></i> İşlem Geçmişi
+        </h4>
+        <table class="table table-bordered table-striped">
+            <thead class="table-dark text-center">
+                <tr>
+                    <th>#</th>
+                    <th>Müşteri</th>
+                    <th>Tutar</th>
+                    <th>Onaylayan</th>
+                    <th>Açıklama</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in (List<DesignPattern.ChainOfResponsibility.DataAccessLayer.CustomerProcess>)ViewBag.History)
+                {
+                    <tr>
+                        <td class="text-center">@item.CustomerProcessID</td>
+                        <td>@item.Name</td>
+                        <td>@item.Amount ₺</td>
+                        <td>@item.EmployeeName</td>
+                        <td>@item.Description</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}

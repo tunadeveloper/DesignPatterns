@@ -4,26 +4,56 @@
 }
 
 <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
-<div class="container">
-    <br />
-    <form method="post">
-    <input type="hidden" class="form-control" asp-for="ProductID" />
-    <br />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
 
-    <label>Ürün Adı</label>
-    <input type="text" class="form-control" asp-for="Name" />
-    <br />
+<style>
+    body {
+        background-color: #f4f7fc;
+    }
 
-    <label>Ürün Stok Sayısı</label>
-    <input type="text" class="form-control" asp-for="Stock" />
-    <br />
+    .form-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+        padding: 30px;
+        margin-top: 50px;
+    }
 
-    <label>Ürün Fiyatı</label>
-    <input type="text" class="form-control" asp-for="Price" />
-    <br />
-    <label>Ürün Açıklaması</label>
-    <input type="text" class="form-control" asp-for="Description" />
-    <br />
-    <a href="/Default/Index/" class="btn btn-primary">Güncelle</a>
-    </form>
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+</style>
+
+<div class="container col-md-6">
+    <div class="form-card">
+        <h4 class="mb-4 text-primary"><i class="fas fa-pen-to-square"></i> Ürünü Güncelle</h4>
+        <form method="post">
+            <input type="hidden" asp-for="ProductID" />
+
+            <div class="mb-3">
+                <label>Ürün Adı</label>
+                <input type="text" class="form-control" asp-for="Name" />
+            </div>
+
+            <div class="mb-3">
+                <label>Stok</label>
+                <input type="number" class="form-control" asp-for="Stock" />
+            </div>
+
+            <div class="mb-3">
+                <label>Fiyat</label>
+                <input type="text" class="form-control" asp-for="Price" />
+            </div>
+
+            <div class="mb-4">
+                <label>Açıklama</label>
+                <textarea class="form-control" asp-for="Description" rows="3"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">
+                <i class="fas fa-save"></i> Güncelle
+            </button>
+        </form>
+    </div>
 </div>

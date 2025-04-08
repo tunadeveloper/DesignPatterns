@@ -18,11 +18,12 @@ namespace DesignPattern.CQRS.CQRSPattern.Handlers
             var values = _context.Products.Find(query.ID);
             return new GetProductUpdateQueryResult
             {
+                ProductID = values.ProductID,
                 Name = values.Name,
                 Price = values.Price,
                 Stock = values.Stock,
-                Description = values.Description,
-                ProductID = values.ProductID,
+                Description = values.Description
+                
             };
         }
     }
