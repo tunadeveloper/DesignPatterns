@@ -1,0 +1,86 @@
+﻿@model RegisterViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<style>
+    body {
+        background-color: #f4f7fc;
+    }
+
+    .form-card {
+        background-color: #fff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        padding: 30px;
+        margin-top: 50px;
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 6px;
+    }
+
+    .btn {
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        width: 100%;
+    }
+
+    .error {
+        color: red;
+        font-size: 12px;
+    }
+</style>
+
+<div class="container col-md-6">
+    <div class="form-card">
+        <h4 class="mb-4 text-primary text-center"><i class="fas fa-user-plus"></i> Kayıt Ol</h4>
+        <form method="post">
+            <div class="mb-3">
+                <label>Adınız</label>
+                <input type="text" asp-for="Name" class="form-control" />
+                <span class="error" asp-validation-for="Name"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>Soyadınız</label>
+                <input type="text" asp-for="Surname" class="form-control" />
+                <span class="error" asp-validation-for="Surname"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>Mail Adresiniz</label>
+                <input type="text" asp-for="Email" class="form-control" />
+                <span class="error" asp-validation-for="Email"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>Kullanıcı Adınız</label>
+                <input type="text" asp-for="Username" class="form-control" />
+                <span class="error" asp-validation-for="Username"></span>
+            </div>
+
+            <div class="mb-3">
+                <label>Şifreniz</label>
+                <input type="password" asp-for="Password" class="form-control" />
+                <span class="error" asp-validation-for="Password"></span>
+            </div>
+
+            <button class="btn btn-primary">
+                <i class="fas fa-check-circle"></i> Kayıt Ol
+            </button>
+        </form>
+        @if (ViewBag.Success != null)
+        {
+            <div class="alert alert-success mt-3 text-center">
+                <i class="fas fa-check-circle"></i> İşlem Başarılı
+            </div>
+        }
+    </div>
+</div>
