@@ -1,0 +1,37 @@
+﻿@model CustomerViewModel
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<div class="container mt-5">
+    <div class="card shadow rounded-4 p-4">
+        <h4 class="text-center mb-4 text-primary">Para Transferi</h4>
+
+        @if (!string.IsNullOrEmpty(ViewBag.Success))
+        {
+            <div class="alert alert-success text-center" role="alert">
+                <i class="fas fa-check-circle"></i> @ViewBag.Success
+            </div>
+        }
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Gönderici ID</label>
+                <input type="number" asp-for="SenderID" class="form-control" placeholder="Gönderici Müşteri ID" required />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Alıcı ID</label>
+                <input type="number" asp-for="ReceiverID" class="form-control" placeholder="Alıcı Müşteri ID" required />
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label">Miktar</label>
+                <input type="number" asp-for="Amount" class="form-control" placeholder="Transfer edilecek tutar" required />
+            </div>
+
+            <button type="submit" class="btn btn-success w-100">Gönder</button>
+        </form>
+    </div>
+</div>
