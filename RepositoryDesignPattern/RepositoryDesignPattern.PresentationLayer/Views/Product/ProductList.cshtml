@@ -1,0 +1,56 @@
+﻿@model List<RepositoryDesignPattern.EntityLayer.Concrete.Product>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow-lg rounded-4">
+        <div class="card-body">
+            <h3 class="text-center text-primary mb-4">Ürün Listesi</h3>
+
+            <table class="table table-bordered table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Ürün Adı</th>
+                        <th>Stok</th>
+                        <th>Fiyat</th>
+                        <th>Kategori</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.ProductID</td>
+                            <td>@item.ProductName</td>
+                            <td>@item.ProductStock</td>
+                            <td>@item.ProductPrice ₺</td>
+                            <td>@item.Category.CategoryName</td>
+                            <td>
+                                <a href="/Product/DeleteProduct/@item.ProductID" class="btn btn-danger btn-sm">
+                                    <i class="fas fa-trash-alt"></i> Sil
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/Product/UpdateProduct/@item.ProductID" class="btn btn-success btn-sm">
+                                    <i class="fas fa-edit"></i> Güncelle
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <a href="/Product/CreateProduct" class="btn btn-outline-primary mt-3">
+                <i class="fas fa-plus"></i> Yeni Ürün Ekle
+            </a>
+        </div>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

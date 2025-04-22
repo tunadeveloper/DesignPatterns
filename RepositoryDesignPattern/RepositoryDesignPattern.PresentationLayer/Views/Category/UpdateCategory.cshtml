@@ -1,0 +1,30 @@
+﻿@model RepositoryDesignPattern.EntityLayer.Concrete.Category
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow rounded-4 p-4">
+        <h4 class="text-warning mb-4">Kategori Güncelle</h4>
+
+        <form method="post">
+            <input type="hidden" asp-for="CategoryID" />
+
+            <div class="mb-3">
+                <label class="form-label">Kategori Adı</label>
+                <input type="text" asp-for="CategoryName" class="form-control" placeholder="Kategori adını güncelleyin..." required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-save"></i> Güncelle
+            </button>
+            <a href="/Category/CategoryList" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left"></i> Geri Dön
+            </a>
+        </form>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

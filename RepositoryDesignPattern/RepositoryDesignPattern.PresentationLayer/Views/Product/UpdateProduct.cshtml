@@ -1,0 +1,50 @@
+﻿@model RepositoryDesignPattern.EntityLayer.Concrete.Product
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<div class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg p-4 w-50">
+        <h3 class="text-center mb-4 text-warning">
+            <i class="fas fa-edit"></i> Ürün Güncelle
+        </h3>
+
+        <form method="post">
+            <input type="hidden" asp-for="ProductID" />
+
+            <div class="mb-3">
+                <label class="form-label"><i class="fas fa-tag"></i> Ürün Adı</label>
+                <input type="text" asp-for="ProductName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><i class="fas fa-cubes"></i> Stok</label>
+                <input type="number" asp-for="ProductStock" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label"><i class="fas fa-money-bill-wave"></i> Fiyat</label>
+                <input type="number" asp-for="ProductPrice" step="0.01" class="form-control" />
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label"><i class="fas fa-list"></i> Kategori</label>
+                <select asp-for="CategoryID" asp-items="ViewBag.v" class="form-select">
+                    <option value="">Kategori Seçiniz</option>
+                </select>
+            </div>
+
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-warning w-50">
+                    <i class="fas fa-sync-alt"></i> Güncelle
+                </button>
+                <a href="/Product/ProductList" class="btn btn-outline-secondary w-25">
+                    <i class="fas fa-arrow-left"></i> Geri
+                </a>
+            </div>
+        </form>
+    </div>
+</div>

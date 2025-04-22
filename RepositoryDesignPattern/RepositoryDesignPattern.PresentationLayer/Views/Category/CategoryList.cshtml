@@ -1,0 +1,56 @@
+﻿@model List<RepositoryDesignPattern.EntityLayer.Concrete.Category>
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow rounded-4 p-4">
+        <div class="d-flex justify-content-between align-items-center mb-3">
+            <h4 class="text-primary">Kategori Listesi</h4>
+            <a href="/Category/CreateCategory/" class="btn btn-outline-primary">+ Yeni Kategori</a>
+        </div>
+
+        @if (Model != null && Model.Any())
+        {
+            <table class="table table-bordered table-hover text-center align-middle">
+                <thead class="table-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Kategori Adı</th>
+                        <th>Sil</th>
+                        <th>Güncelle</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.CategoryID</td>
+                            <td>@item.CategoryName</td>
+                            <td>
+                                <a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-sm btn-danger">
+                                    <i class="fas fa-trash-alt"></i> Sil
+                                </a>
+                            </td>
+                            <td>
+                                <a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-sm btn-success">
+                                    <i class="fas fa-edit"></i> Güncelle
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <div class="alert alert-warning text-center mt-3">
+                <i class="fas fa-exclamation-circle"></i> Hiç kategori bulunamadı.
+            </div>
+        }
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>

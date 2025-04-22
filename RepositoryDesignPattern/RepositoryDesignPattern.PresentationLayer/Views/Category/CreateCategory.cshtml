@@ -1,0 +1,28 @@
+﻿@model RepositoryDesignPattern.EntityLayer.Concrete.Category
+@{
+    Layout = null;
+}
+
+<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <div class="card shadow rounded-4 p-4">
+        <h4 class="text-primary mb-4">Yeni Kategori Ekle</h4>
+
+        <form method="post">
+            <div class="mb-3">
+                <label class="form-label">Kategori Adı</label>
+                <input type="text" asp-for="CategoryName" class="form-control" placeholder="Kategori adı giriniz..." required />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                <i class="fas fa-plus-circle"></i> Kaydet
+            </button>
+            <a href="/Category/CategoryList" class="btn btn-secondary ms-2">
+                <i class="fas fa-arrow-left"></i> Geri Dön
+            </a>
+        </form>
+    </div>
+</div>
+
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
