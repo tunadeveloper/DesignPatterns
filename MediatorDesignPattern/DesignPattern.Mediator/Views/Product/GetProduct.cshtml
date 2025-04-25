@@ -1,0 +1,36 @@
+﻿@model DesignPattern.Mediator.MediatorPattern.Results.GetProductByIdQueryResult
+@{
+    Layout = null;
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="fas fa-search me-2"></i>Ürün Bilgisi</h5>
+                </div>
+                <div class="card-body">
+                    <div class="mb-3">
+                        <label class="form-label">Ürün ID</label>
+                        <input type="text" asp-for="ProductID" class="form-control" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ürün Adı</label>
+                        <input type="text" asp-for="ProductName" class="form-control" readonly />
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Ürün Stoğu</label>
+                        <input type="text" asp-for="ProductStock" class="form-control" readonly />
+                    </div>
+                    <a href="/Product/Index" class="btn btn-secondary w-100 mt-3">
+                        <i class="fas fa-arrow-left me-2"></i>Geri Dön
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
