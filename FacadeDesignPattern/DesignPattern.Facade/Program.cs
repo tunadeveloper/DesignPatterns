@@ -1,10 +1,12 @@
 using DesignPattern.Facade.DataAccessLayer;
+using DesignPattern.Facade.FacadePattern;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<Context>();
+builder.Services.AddScoped<OrderFacade>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

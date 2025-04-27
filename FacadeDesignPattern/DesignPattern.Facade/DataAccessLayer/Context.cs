@@ -6,10 +6,11 @@ namespace DesignPattern.Facade.DataAccessLayer
     {
        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=TUNA\\SQLEXPRESS;Database=FacadeDP;Integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=TUNA\\SQLEXPRESS;Database=FacadeDP2;Integrated Security=true;");
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Customer> Customers { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderDetail> OrderDetails { get; set; }
     }
 }

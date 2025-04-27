@@ -2,13 +2,13 @@
 
 namespace DesignPattern.Facade.FacadePattern
 {
-    public class AddOrder
+    public class ProductStock
     {
         Context context = new Context();
-        public void AddNewOrder(Order order)
+        public void StockDecrease(int id, int amount)
         {
-            order.OrderDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            context.Orders.Add(order);
+            var value = context.Products.Find(id);
+            value.ProductStock -= amount;
             context.SaveChanges();
         }
     }

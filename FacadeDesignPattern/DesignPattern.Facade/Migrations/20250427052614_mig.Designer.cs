@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DesignPattern.Facade.Migrations
 {
     [DbContext(typeof(Context))]
-    [Migration("20250426202159_mig1")]
-    partial class mig1
+    [Migration("20250427052614_mig")]
+    partial class mig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,7 +71,44 @@ namespace DesignPattern.Facade.Migrations
 
                     b.HasIndex("CustomerID");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("DesignPattern.Facade.DataAccessLayer.OrderDetail", b =>
+                {
+                    b.Property<int>("OrderDetailID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("OrderDetailID"), 1L, 1);
+
+                    b.Property<int?>("CustomerID")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductCount")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ProductID")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("ProductPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<decimal>("ProductTotalPrice")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("OrderDetailID");
+
+                    b.HasIndex("CustomerID");
+
+                    b.HasIndex("OrderID");
+
+                    b.HasIndex("ProductID");
+
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("DesignPattern.Facade.DataAccessLayer.Product", b =>
@@ -112,9 +149,42 @@ namespace DesignPattern.Facade.Migrations
                     b.Navigation("Customer");
                 });
 
+            modelBuilder.Entity("DesignPattern.Facade.DataAccessLayer.OrderDetail", b =>
+                {
+                    b.HasOne("DesignPattern.Facade.DataAccessLayer.Customer", "Customer")
+                        .WithMany("orderDetails")
+                        .HasForeignKey("CustomerID");
+
+                    b.HasOne("DesignPattern.Facade.DataAccessLayer.Order", "Order")
+                        .WithMany("orderDetails")
+                        .HasForeignKey("OrderID");
+
+                    b.HasOne("DesignPattern.Facade.DataAccessLayer.Product", "Product")
+                        .WithMany("orderDetails")
+                        .HasForeignKey("ProductID");
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("DesignPattern.Facade.DataAccessLayer.Customer", b =>
                 {
                     b.Navigation("Orders");
+
+                    b.Navigation("orderDetails");
+                });
+
+            modelBuilder.Entity("DesignPattern.Facade.DataAccessLayer.Order", b =>
+                {
+                    b.Navigation("orderDetails");
+                });
+
+            modelBuilder.Entity("DesignPattern.Facade.DataAccessLayer.Product", b =>
+                {
+                    b.Navigation("orderDetails");
                 });
 #pragma warning restore 612, 618
         }

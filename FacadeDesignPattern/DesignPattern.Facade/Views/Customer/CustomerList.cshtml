@@ -1,0 +1,42 @@
+﻿@model List<DesignPattern.Facade.DataAccessLayer.Customer>
+@{
+    Layout = "~/Views/Shared/_FacadeLayout.cshtml";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-primary">
+            <i class="fas fa-users me-2"></i>Müşteri Listesi
+        </h2>
+        <a href="/Customer/AddNewCustomer" class="btn btn-success">
+            <i class="fas fa-user-plus me-1"></i> Yeni Müşteri Ekle
+        </a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered align-middle shadow">
+            <thead class="table-primary text-center">
+                <tr>
+                    <th>#</th>
+                    <th>Adı</th>
+                    <th>Soyadı</th>
+                    <th>Şehri</th>
+                </tr>
+            </thead>
+            <tbody class="text-center">
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.CustomerID</td>
+                        <td>@item.CustomerName</td>
+                        <td>@item.CustomerSurname</td>
+                        <td>@item.CustomerCity</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

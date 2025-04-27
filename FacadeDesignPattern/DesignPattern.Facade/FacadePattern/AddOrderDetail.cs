@@ -2,13 +2,12 @@
 
 namespace DesignPattern.Facade.FacadePattern
 {
-    public class AddOrder
+    public class AddOrderDetail
     {
         Context context = new Context();
-        public void AddNewOrder(Order order)
+        public void AddNewOrderDetail(OrderDetail orderDetail)
         {
-            order.OrderDate = DateTime.Parse(DateTime.Now.ToShortDateString());
-            context.Orders.Add(order);
+            context.OrderDetails.Add(orderDetail);
             context.SaveChanges();
         }
     }
