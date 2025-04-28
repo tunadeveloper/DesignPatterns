@@ -6,7 +6,7 @@ namespace DesignPattern.Facade.Controllers
 {
     public class OrderController : Controller
     {
-       Context context = new Context();
+        Context context = new Context();
 
         public IActionResult OrderList()
         {
@@ -16,18 +16,33 @@ namespace DesignPattern.Facade.Controllers
 
 
         [HttpGet]
-        public IActionResult OrderStart()
+        public IActionResult OrderDetailStart()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult OrderStart(int customerID, int productID, int orderID, int productCount, decimal productPrice)
+        public IActionResult OrderDetailStart(int customerID, int productID, int orderID, int productCount, decimal productPrice)
         {
             OrderFacade orderFacade = new OrderFacade();
             orderFacade.CompleteOrderDetail(customerID, productID, orderID, productCount, productPrice);
 
             return RedirectToAction("OrderList");
         }
+
+        [HttpGet]
+        public IActionResult OrderStart()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult OrderStart(int customerID)
+        {
+            OrderFacade orderFacade = new OrderFacade();
+            orderFacade.CompleteOrder(customerID);
+            return RedirectToAction("OrderList");
+        }
+
     }
 }
