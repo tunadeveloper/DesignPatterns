@@ -28,15 +28,61 @@ Bu proje, ASP.NET Core kullanılarak geliştirilmiş, yazılım mimarisinde sık
 ## 📌 Senaryo Bazlı Uygulamalar
 - 🧑‍💼 **Chain of Responsibility**: Farklı yetki seviyelerine sahip çalışanlar tarafından müşteri işlemlerinin onaylanması.
 - 📊 **CQRS**: Veritabanı işlemleri için ayrı komut ve sorgu modelleri kullanımı.
+![Image](https://github.com/user-attachments/assets/026480cb-6c5d-41bd-a741-7c944f8abd26)
+
+---
+
 - 💳 **Template Method**: Netflix abonelik planlarının farklı kurallar ile uygulanması.
+
+![Image](https://github.com/user-attachments/assets/dc42c1b5-09bd-40c6-8717-4b8f19e71a4d)
+
+---
+
 - 📬 **Observer**: Kullanıcı kayıt olduğunda otomatik hoş geldin e-postası gönderilmesi.
+
+![Image](https://github.com/user-attachments/assets/48faf75b-c6b9-42ca-846d-771774990af9)
+
+---
+
 - 📁 **Unit of Work**: Müşteri ve işlem verilerinin tek bir transaction ile kaydedilmesi.
+
+![Image](https://github.com/user-attachments/assets/e40314a8-6e31-4c19-b189-ffb0b88703a5)
+
+---
+
 - 📚 **Repository**: Kategori verilerinin yönetimi ve erişiminin soyutlanması.
+  
+![Image](https://github.com/user-attachments/assets/4d065f62-0943-4211-b081-39e20f873808)
+
+---
+
 - 🌲 **Composite**: Ürün kategorilerinin hiyerarşik olarak gösterilmesi.
+  
+![Image](https://github.com/user-attachments/assets/94aaa893-9193-4782-b4c8-db0fc760a728)
+
+  ---
+
 - 📡 **Mediator**: Komutlar ve sorguların MediatR ile yönetilmesi.
+
+![Image](https://github.com/user-attachments/assets/38de0b39-ba78-45b2-8a04-cbf93960603c)
+
+---
+
 - 🔍 **Iterator**: Koleksiyonlardaki ürünlerin sıralı listelenmesi.
+
+![Image](https://github.com/user-attachments/assets/790753a7-7ae4-4b31-8156-b04baca4a4fe)
+
+---
+
 - 🧾 **Facade**: Veritabanı işlemleri için sadeleştirilmiş servis arayüzü.
+
+![Image](https://github.com/user-attachments/assets/bf70058e-b8f9-4c2e-b146-556312b53752)
+
+  ---
+
 - 🧪 **Decorator**: Mesaj gönderme işlemine dinamik davranış (loglama, doğrulama) eklenmesi.
+
+![Image](https://github.com/user-attachments/assets/37a0241f-7b6f-4090-89f7-833f44d0a4eb)
 
 ## 🛠️ Kullanılan Teknolojiler
 - ✅ **ASP.NET Core**
