@@ -6,7 +6,7 @@ namespace DesignPattern.ChainOfResponsibility.DataAccessLayer
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Server=TUNA\\SQLEXPRESS;Database=COR;Integrated Security=true;");
+            optionsBuilder.UseSqlServer("Server=TUNA\\SQLEXPRESS;Database=CORDesignPatterns;Integrated Security=true;");
         }
 
         public DbSet<CustomerProcess> CustomerProcesses { get; set; }

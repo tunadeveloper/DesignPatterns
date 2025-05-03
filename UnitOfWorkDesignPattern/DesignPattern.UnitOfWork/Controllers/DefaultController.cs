@@ -28,13 +28,15 @@ namespace DesignPattern.UnitOfWork.Controllers
 
             if (value1 == null || value2 == null)
             {
-                ViewBag.Success = "Müşteri bilgileri geçersiz.";
+                ViewBag.Message = "Müşteri bilgileri geçersiz.";
+                ViewBag.AlertClass = "alert-danger";
                 return View();
             }
 
             if (value1.CustomerBalance < model.Amount)
             {
-                ViewBag.Success = "Yetersiz bakiye.";
+                ViewBag.Message = "Yetersiz bakiye.";
+                ViewBag.AlertClass = "alert-danger"; 
                 return View();
             }
 
@@ -42,15 +44,15 @@ namespace DesignPattern.UnitOfWork.Controllers
             value2.CustomerBalance += model.Amount;
 
             List<Customer> modifiedCustomers = new List<Customer>()
-    {
-        value1,
-        value2
-    };
+            {
+                value1,
+                value2
+            };
 
             _customerService.TMultiUpdate(modifiedCustomers);
-            ViewBag.Success = "İşlem başarıyla gerçekleşti!";
+            ViewBag.Message = "İşlem başarıyla gerçekleşti!";
+            ViewBag.AlertClass = "alert-success"; 
             return View();
         }
-
     }
 }

@@ -10,6 +10,7 @@
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h4 class="text-primary">Kategori Listesi</h4>
             <a href="/Category/CreateCategory/" class="btn btn-outline-primary">+ Yeni Kategori</a>
+           
         </div>
 
         @if (Model != null && Model.Any())
@@ -43,6 +44,7 @@
                     }
                 </tbody>
             </table>
+            <a href="/Product/ProductList/" class="btn btn-outline-success">Ürünler</a>
         }
         else
         {
@@ -52,5 +54,6 @@
         }
     </div>
 </div>
+
 
 <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
