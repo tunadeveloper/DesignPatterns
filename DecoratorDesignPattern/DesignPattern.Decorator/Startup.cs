@@ -1,4 +1,5 @@
 using DesignPattern.Decorator.DataAccessLayer;
+using DesignPattern.Decorator.DecoratorPattern2;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,7 +26,6 @@ namespace DesignPattern.Decorator
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<Context>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

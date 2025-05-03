@@ -4,17 +4,11 @@ namespace DesignPattern.Decorator.DecoratorPattern
 {
     public class CreateNotifier : INotifier
     {
-        private readonly Context _context;
-
-        public CreateNotifier(Context context)
-        {
-            _context = context;
-        }
-
+        Context context = new Context();
         public void CreateNotify(Notifier notifier)
         {
-          _context.Notifiers.Add(notifier);
-            _context.SaveChanges();
+            context.Notifiers.Add(notifier);
+            context.SaveChanges();
         }
     }
 }
