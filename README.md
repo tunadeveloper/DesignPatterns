@@ -25,68 +25,74 @@ Bu proje, ASP.NET Core kullanılarak geliştirilmiş, yazılım mimarisinde sık
 | 10    | 🏛️ Facade                 | Alt sistemlerin karmaşıklığını sadeleştirip tek bir arabirim sağlar.        | .NET 6.0       |
 | 11    | 🎨 Decorator              | Nesnelere çalışma zamanında dinamik olarak yeni yetenekler kazandırır.     | .NET 5.0       |
 
-## 📌 Senaryo Bazlı Uygulamalar
-- 🧑‍💼 **Chain of Responsibility**: Farklı yetki seviyelerine sahip çalışanlar tarafından müşteri işlemlerinin onaylanması.
-- 📊 **CQRS**: Veritabanı işlemleri için ayrı komut ve sorgu modelleri kullanımı.
-![Image](https://github.com/user-attachments/assets/026480cb-6c5d-41bd-a741-7c944f8abd26)
-
----
-
-- 💳 **Template Method**: Netflix abonelik planlarının farklı kurallar ile uygulanması.
-
-![Image](https://github.com/user-attachments/assets/dc42c1b5-09bd-40c6-8717-4b8f19e71a4d)
-
----
-
-- 📬 **Observer**: Kullanıcı kayıt olduğunda otomatik hoş geldin e-postası gönderilmesi.
-
-![Image](https://github.com/user-attachments/assets/48faf75b-c6b9-42ca-846d-771774990af9)
-
----
-
-- 📁 **Unit of Work**: Müşteri ve işlem verilerinin tek bir transaction ile kaydedilmesi.
-
-![Image](https://github.com/user-attachments/assets/e40314a8-6e31-4c19-b189-ffb0b88703a5)
-
----
-
-- 📚 **Repository**: Kategori verilerinin yönetimi ve erişiminin soyutlanması.
-  
-![Image](https://github.com/user-attachments/assets/4d065f62-0943-4211-b081-39e20f873808)
-
----
-
-- 🌲 **Composite**: Ürün kategorilerinin hiyerarşik olarak gösterilmesi.
-  
-![Image](https://github.com/user-attachments/assets/94aaa893-9193-4782-b4c8-db0fc760a728)
-
-  ---
-
-- 📡 **Mediator**: Komutlar ve sorguların MediatR ile yönetilmesi.
-
-![Image](https://github.com/user-attachments/assets/38de0b39-ba78-45b2-8a04-cbf93960603c)
-
----
-
-- 🔍 **Iterator**: Koleksiyonlardaki ürünlerin sıralı listelenmesi.
-
-![Image](https://github.com/user-attachments/assets/790753a7-7ae4-4b31-8156-b04baca4a4fe)
-
----
-
-- 🧾 **Facade**: Veritabanı işlemleri için sadeleştirilmiş servis arayüzü.
-
-![Image](https://github.com/user-attachments/assets/bf70058e-b8f9-4c2e-b146-556312b53752)
-
-  ---
-
-- 🧪 **Decorator**: Mesaj gönderme işlemine dinamik davranış (loglama, doğrulama) eklenmesi.
-
-![Image](https://github.com/user-attachments/assets/37a0241f-7b6f-4090-89f7-833f44d0a4eb)
-
 ## 🛠️ Kullanılan Teknolojiler
 - ✅ **ASP.NET Core**
 - ✅ **Entity Framework Core**
 - ✅ **PostgreSQL / SQL Server**
 - ✅ **Identity Framework (Observer Pattern)**
 - ✅ **Clean Architecture yaklaşımı**
+
+## 📌 Senaryo Bazlı Uygulamalar
+- 1️⃣ **Chain of Responsibility**: Farklı yetki seviyelerine sahip çalışanlar tarafından müşteri işlemlerinin onaylanması.
+
+  https://github.com/user-attachments/assets/a6b8d936-fbe9-4de0-aeff-5f09af74c89f
+  
+  ---
+  
+- 2️⃣ **CQRS**: Veritabanı işlemleri için ayrı komut ve sorgu modelleri kullanımı.
+
+  https://github.com/user-attachments/assets/79d6024a-cd21-4f43-ab6c-81fbad2e71dd
+
+---
+
+- 3️⃣ **Template Method**: Netflix abonelik planlarının farklı kurallar ile uygulanması.
+
+  https://github.com/user-attachments/assets/de0b297b-ff4e-4ddb-b5a6-c302815877ed
+
+---
+
+- 4️⃣ **Observer**: Kullanıcı kayıt olduğunda otomatik hoş geldin e-postası gönderilmesi.
+
+  https://github.com/user-attachments/assets/5011467c-b036-4d53-b2df-fffdc7ecefc7
+
+---
+
+- 5️⃣ **Unit of Work**: Müşteri ve işlem verilerinin tek bir transaction ile kaydedilmesi.
+
+  https://github.com/user-attachments/assets/9b4ac938-b940-4ff9-bc3b-fd086a04f742
+
+---
+
+- 6️⃣ **Repository**: Kategori verilerinin yönetimi ve erişiminin soyutlanması.
+  
+  https://github.com/user-attachments/assets/8eeadf25-34a4-4615-981f-85662f20c03b
+
+---
+
+- 7️⃣ **Composite**: Ürün kategorilerinin hiyerarşik olarak gösterilmesi.
+  
+  ![Image](https://github.com/user-attachments/assets/a7886aa9-f020-4860-8c37-67db165eaf5e)
+
+  ---
+
+- 8️⃣ **Mediator**: Komutlar ve sorguların MediatR ile yönetilmesi.
+
+  https://github.com/user-attachments/assets/921bf771-f49a-405c-b7af-ad83e8a5f830
+
+---
+
+- 9️⃣ **Iterator**: Koleksiyonlardaki ürünlerin sıralı listelenmesi.
+
+  ![Image](https://github.com/user-attachments/assets/4982ffe1-7bfd-46ca-a6d1-bffcd335f178)
+
+---
+
+- 🔟 **Facade**: Veritabanı işlemleri için sadeleştirilmiş servis arayüzü.
+
+  https://github.com/user-attachments/assets/e75640c8-f99d-4c86-aa23-aadc2f504b1c
+
+  ---
+
+- 1️⃣1️⃣ **Decorator**: Mesaj gönderme işlemine dinamik davranış (loglama, doğrulama) eklenmesi.
+
+  https://github.com/user-attachments/assets/26f34be9-8191-4eed-8f05-d1689540e7dd
